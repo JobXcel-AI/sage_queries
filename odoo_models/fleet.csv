@@ -1,0 +1,24 @@
+####################################################################################################################
+# COLUMN names and types
+# Depends on:
+# - employees.csv
+# - models.csv
+####################################################################################################################
+id: string
+name: string (the name of the vehicle; usually includes the make and model, e.g., "Toyota Prius")
+description: string (a description of the vehicle)
+license_plate: string (the vehicle's license plate number)
+vin_sn: string (the vehicle identification number (VIN); a unique identifier for the vehicle)
+trailer_hook: boolean (whether the vehicle has a trailer hook)
+driver_id: string (the current driver of the vehicle; should reference an employee's id from the employee records)
+model_id: string (the model of the vehicle; must match the model name defined in Odoo or be included in the CSV file before any vehicle that references it) as defined in https://github.com/odoo/odoo/blob/17.0/addons/fleet/data/fleet_cars_data.xml
+odometer: float (the current odometer reading of the vehicle; used for tracking vehicle mileage)
+odometer_unit: string (the unit of the odometer reading; should be either "kilometers" or "miles")
+acquisition_date: date (the date the vehicle was acquired in the format YYYY-MM-DD)
+color: string (the color of the vehicle)
+location: string (the location where the vehicle is parked or primarily used)
+model_year: integer (the year the vehicle was manufactured)
+####################################################################################################################
+id,name,description,license_plate,vin_sn,trailer_hook,driver_id,model_id,brand_id,odometer,odometer_unit,acquisition_date,color,location,seats,model_year,doors,fuel_type,co2,transmission,horsepower
+
+

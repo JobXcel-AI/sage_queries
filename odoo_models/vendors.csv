@@ -1,0 +1,24 @@
+####################################################################################################################
+# COLUMN names and types
+####################################################################################################################
+id: string
+name: string
+parent_id: string (if parent_id is an item in the csv file, it needs to precede anything referencing it)
+type: string (on of ["contact", "invoice", "delivery", "other"])
+    - Contact: Use this to organize the contact details of employees of a given company (e.g. CEO, CFO, ...).\n
+    - Invoice Address: Preferred address for all invoices. Selected by default when you invoice an order that belongs to this company.\n
+    - Delivery Address: Preferred address for all deliveries. Selected by default when you deliver an order that belongs to this company.\n
+    - Other: Other address for the company (e.g. subsidiary, ...)
+street: string
+zip: string
+city: string
+state: string (this can either be the full name of the state, or the state abbreviation i.e. California or CA)
+country: string (this can either be the full name of the country, or the country abbreviation as defined here: https://github.com/odoo/odoo/blob/17.0/odoo/addons/base/data/res_country_data.xml)
+email: string
+phone: string
+is_company: boolean (if true, the contact is a company, otherwise it is a person/address)
+####################################################################################################################
+columns:
+id,name,parent_id,type,street,zip,city,state,country,email,phone,is_company
+
+NOTE: This is the exact same as the contacts.csv file

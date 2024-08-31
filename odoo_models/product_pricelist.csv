@@ -1,0 +1,16 @@
+####################################################################################################################
+# COLUMN names and types
+# Depends on:
+# - product_pricelist_items.csv
+####################################################################################################################
+id: string
+name: string (the name of the pricelist; e.g., "Retail Pricelist", "Wholesale Pricelist")
+currency_id: string (the currency used for the pricelist; must match an existing currency in Odoo, e.g., "USD", "EUR")
+company_id: string (the company to which the pricelist belongs; should match an existing company in Odoo or be defined in the CSV file before any pricelist that references it)
+discount_policy: string (the discount policy of the pricelist; should be one of ["with_discount", "without_discount"])
+    - with_discount: Display the discount as a separate line on the sale order.
+    - without_discount: Deduct the discount directly from the unit price.
+item_ids: string (a comma-separated list of pricelist item IDs that define the pricing rules for the pricelist)
+####################################################################################################################
+columns:
+id,name,currency_id,company_id,discount_policy,active,item_ids

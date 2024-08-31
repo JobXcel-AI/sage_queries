@@ -1,0 +1,21 @@
+####################################################################################################################
+# COLUMN names and types
+# Depends on:
+# - products.csv
+####################################################################################################################
+id: string
+name: string (the name of the sale order template; e.g., "Standard Quotation", "Premium Service Package")
+sale_order_template_line_ids: string (a comma-separated list of product lines to be included in the sale order template; each line should reference a product id or product name)
+sale_order_template_option_ids: string (a comma-separated list of optional products or service lines that the customer can choose to add to the sale order; each option should reference a product id or product name)
+require_payment: boolean (if true, the sale order template requires payment before order confirmation; otherwise, it does not)
+####################################################################################################################
+columns:
+id,name,sale_order_template_line_ids,sale_order_template_option_ids,require_payment
+
+
+NOTE: when defining the sale_order_template_line_ids, and sale_order_template_option_ids have the field defined as a comma-separated list inside of a string. This is because the field is a many2many relationship, and the CSV format does not support many2many relationships directly. The many2many relationship is represented as a comma-separated list of IDs or names of the related records.
+
+example:
+id,name,sale_order_template_line_ids,sale_order_template_option_ids,require_payment
+id_1,Standard Quotation,"product_id_1,product_id_2","product_id_3,product_id_4",True
+id_2,Premium Service Package,"product_id_5,product_id_6","product_id_7,product_id_8,product_id_9",False

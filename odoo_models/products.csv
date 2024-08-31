@@ -1,0 +1,31 @@
+####################################################################################################################
+# COLUMN names and types
+# Depends on:
+# - uom.csv
+####################################################################################################################
+id: string
+name: string
+default_code: string (the internal reference or SKU of the product)
+type: string (one of ["consu", "service", "product"])
+    - Consumable (consu): A product that doesn’t require inventory tracking (e.g., office supplies).
+    - Service (service): A non-physical product that represents a service offered (e.g., consulting).
+    - Storable Product (product): A physical product that is tracked in inventory and has stock quantities (e.g., computers, furniture).
+invoice_policy: string (one of ["order", "delivery"])
+    - Order: The product is invoiced based on the sales order.
+    - Delivery: The product is invoiced based on the delivery order.
+list_price: float (the sale price of the product)
+standard_price: float (the cost price of the product)
+uom_id: string (the unit of measure for the product; must match an existing unit in Odoo)
+    - defaults can be found at https://github.com/odoo/odoo/blob/17.0/addons/uom/data/uom_data.xml
+    - in all likelihood, there will be no need to define your own units of measure
+uom_po_id: string (the purchase unit of measure for the product; usually the same as uom_id)
+    - defaults can be found at https://github.com/odoo/odoo/blob/17.0/addons/uom/data/uom_data.xml
+    - in all likelihood, there will be no need to define your own units of measure
+currency_id: string (the currency in which the product is priced; must match an existing currency in Odoo)
+description_sale: string (a description that will appear on sales orders and invoices)
+description_purchase: string (a description that will appear on purchase orders)
+weight: float (the weight of the product; used for shipping calculations)
+volume: float (the volume of the product; used for shipping calculations)
+image_1920: binary (a base64-encoded image of the product; optional)
+####################################################################################################################
+id,name,default_code,type,sale_ok,purchase_ok,list_price,standard_price,uom_id,uom_po_id,categ_id,barcode,taxes_id,supplier_taxes_id,description_sale,description_purchase,route_ids,weight,volume,image_1920

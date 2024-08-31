@@ -1,0 +1,12 @@
+####################################################################################################################
+# COLUMN names and types
+# Depends on:
+####################################################################################################################
+id: string
+name: string (the name of the department; e.g., "Human Resources", "Sales")
+parent_id: string (the parent department; if the department is a sub-department, this should reference the parent department's id; the parent department must be defined in the CSV file before any department that references it)
+manager_id: string (the manager of the department; should reference an employee's id from the employee records)
+note: string (a description or note about the department; optional field that can include details about the department's function or responsibilities)
+####################################################################################################################
+columns:
+id,name,parent_id,manager_id,note

@@ -1,0 +1,22 @@
+####################################################################################################################
+# COLUMN names and types
+####################################################################################################################
+id: string
+name: string (the name of the unit of measurement; e.g., "Units", "Kilograms", "Hours")
+category_id: string (the category of the unit; all units in the same category are considered equivalent and can be converted; e.g., "Weight", "Time")
+    - Weight: A category for weight-based units (e.g., grams, kilograms, pounds).
+    - Time: A category for time-based units (e.g., hours, minutes, seconds).
+    - Unit: A category for units that are counted (e.g., pieces, units).
+    - Length: A category for length-based units (e.g., meters, inches, feet).
+    default categories can be found at https://github.com/odoo/odoo/blob/17.0/addons/uom/data/uom_data.xml
+factor: float (conversion factor for the unit of measure; for example, if 1 unit of this measure equals 10 base units, the factor is 10)
+rounding: float (the precision rounding; smallest unit amount for calculations; e.g., 0.01 for two decimal places)
+uom_type: string (one of ["reference", "bigger", "smaller"])
+    - Reference: The base unit for the category (e.g., "Kilogram" in the "Weight" category).
+    - Bigger: Units that are larger than the reference unit (e.g., "Ton" in the "Weight" category).
+    - Smaller: Units that are smaller than the reference unit (e.g., "Gram" in the "Weight" category).
+active: boolean (if true, the unit of measure is active; otherwise, it is inactive)
+####################################################################################################################
+id,name,category_id,factor,rounding,uom_type,active
+
+Notes: I am not sure this even exists in Sage100Contractor

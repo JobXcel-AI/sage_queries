@@ -1,0 +1,30 @@
+####################################################################################################################
+# COLUMN names and types
+# depends on:
+####################################################################################################################
+column name and types
+id: string
+name: string (the name of the vehicle model; e.g., "Prius")
+brand_id: string (the brand or manufacturer of the vehicle model; should match an existing brand in Odoo or be defined in the CSV file before any model that references it; e.g., "Toyota") as defined in https://github.com/odoo/odoo/blob/17.0/addons/fleet/data/fleet_cars_data.xml
+vehicle_type: string (the type of the vehicle; should be either ["car", "bike"])
+seats: integer (the number of seats for this vehicle model)
+doors: integer (the number of doors for this vehicle model)
+fuel_type: string
+    One of the following values:
+        ('diesel', 'Diesel'),
+        ('gasoline', 'Gasoline'),
+        ('full_hybrid', 'Full Hybrid'),
+        ('plug_in_hybrid_diesel', 'Plug-in Hybrid Diesel'),
+        ('plug_in_hybrid_gasoline', 'Plug-in Hybrid Gasoline'),
+        ('cng', 'CNG'),
+        ('lpg', 'LPG'),
+        ('hydrogen', 'Hydrogen'),
+        ('electric', 'Electric'),
+co2: float (the CO2 emissions of the vehicle model, if applicable)
+transmission: string (the type of transmission of the vehicle model; should be either "manual" or "automatic")
+horsepower: float (the horsepower rating of the vehicle model)
+horsepower_tax: float (the tax based on the horsepower of the vehicle model)
+power: float (the power rating of the vehicle model in kilowatts (kW))
+image_1920: binary (a base64-encoded image of the vehicle model; optional)
+####################################################################################################################
+id,name,brand_id,vehicle_type,seats,doors,fuel_type,co2,transmission,horsepower,horsepower_tax,power,image_1920

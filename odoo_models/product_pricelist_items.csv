@@ -1,0 +1,29 @@
+####################################################################################################################
+# COLUMN names and types
+# Depends on:
+# - product_pricelist.csv
+####################################################################################################################
+column name and types
+id: string
+applied_on: string (determines where the rule will apply)
+    one of:
+        '3_global' = "All Products"
+        '2_product_category' = "Product Category"
+        '1_product' = "Product"
+        '0_product_variant' = "Product Variant"
+product_tmpl_id: string (the product template this rule applies to; required if `applied_on` is "product" or "product_variant"; should reference an existing product template in Odoo)
+product_id: string (the specific product variant this rule applies to; required if `applied_on` is "product_variant"; should reference an existing product variant in Odoo)
+categ_id: string (the product category this rule applies to; required if `applied_on` is "product_category"; should reference an existing product category in Odoo)
+min_quantity: float (the minimum quantity of the product required for the rule to apply)
+fixed_price: float (the fixed price to apply; optional if using other pricing methods)
+percent_price: float (the percentage discount to apply on the base price; optional if using other pricing methods)
+price_discount: float (the discount on the price, expressed as a percentage, e.g., -0.10 for a 10% discount)
+date_start: date (the start date from which the pricelist item is valid; in the format YYYY-MM-DD)
+date_end: date (the end date until which the pricelist item is valid; in the format YYYY-MM-DD)
+compute_price: string (the method to compute the price; should be one of ["fixed", "percentage", "formula"])
+    - fixed: Apply a fixed price.
+    - percentage: Apply a percentage discount.
+    - formula: Use a price formula for advanced pricing calculations.
+base: string (the base price for price computation; used when `compute_price` is "formula"; should be one of ["list_price", "standard_price"])
+####################################################################################################################
+id,pricelist_id,applied_on,product_tmpl_id,product_id,categ_id,min_quantity,fixed_price,percent_price,price_discount,date_start,date_end,compute_price,base

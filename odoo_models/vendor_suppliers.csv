@@ -1,0 +1,13 @@
+####################################################################################################################
+# COLUMN names and types
+# Depends on:
+# - products.csv
+# - vendors.csv
+####################################################################################################################
+product_id: string
+partner_id: string (this is the imported ID of the vendor contact)
+price: float (the price of the product from this vendor)
+delay: float (the number of days it takes for the vendor to deliver the product)
+####################################################################################################################
+columns:
+product_id,partner_id,price,delay
